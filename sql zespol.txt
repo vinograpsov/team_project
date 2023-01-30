@@ -1,0 +1,72 @@
+create table Users(
+  id int primary key,
+  username varchar(255) not null,
+  email varchar(255) not null,
+  usr_password varchar(255) not null,
+  age int not null default 18,
+  weight float not null default 62,
+  height float not null default 175,
+  sex varchar(6) not null
+);
+
+create table Products(
+  id int primary key,
+  user_id int null,
+  product_name varchar(255) not null,
+  calories float not null,
+  proteint float not null,
+  fat float not null,
+  carbohydrates float not null,
+  barcode varchar(255) not null,
+  img_url varchar(2000) null,
+  foreign key (user_id) references Users (id)
+);
+
+create table Frige(
+  id int primary key,
+  product_id int not null,
+  user_id int not null,
+  location bit not null,
+  expire_data date not null,
+  foreign key (user_id) references Users(id),
+  foreign key (product_id) references Products(id)
+);
+
+
+create table Kcal_user_use(
+  id int primary key,
+  user_id int not null,
+  date_usr date not null,
+  calories float not null,
+  proteint float not null,
+  fat float not null,
+  foreign key (user_id) references Users(id) 
+);
+
+create table Recipes(
+  id int primary key,
+  user_id int null,
+  name varchar(255) not null,
+  recepe_text varchar(10000) not null,
+  rate bit not null,
+  foreign key (user_id) references Users(id)
+);
+
+create table Recipes_products(
+  product_id int not null,
+  recipe_id int not null,
+  foreign key (product_id) references Products(id),
+  foreign key (recipe_id) references Recipes(id)
+);
+
+create table Finances(
+  id int primary key,
+  cost_type varchar(255) not null,
+  user_id int not null,
+  money_spend float not null,
+  date_of_buy date not null,
+  foreign key (user_id) references Users(id)
+);
+
+
+
