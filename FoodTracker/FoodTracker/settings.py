@@ -84,7 +84,8 @@ DATABASES = {
         'NAME': 'FoodTracker',
         'USER': 'SeniorDeveloper',
         'PASSWORD': '134697825/*-qweQWE',
-        'HOST': 'food-app-server.mysql.database.azure.com',
+        'HOST': '87.246.193.76',
+        'PORT' : '3306'
  
     }
 }
