@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-import django
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-g6kb8g!w3s#3n&_v!x(hg8+7#67cgxz@g^mz6&fzl4r3lggng4'
+SECRET_KEY = 'django-insecure-xu(-elt0=0!$q#j9032!#)q#^z2ed$qd^h@ys2ya7n=4wa=i8d'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -38,7 +37,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'mysql.connector.django' ,
 ]
 
 MIDDLEWARE = [
@@ -75,8 +73,6 @@ WSGI_APPLICATION = 'FoodTracker.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-# simport mysql.connector.django
-
 DATABASES = {
     'default': {
         # 'ENGINE': 'mysql.connector.django',
@@ -84,13 +80,16 @@ DATABASES = {
         'NAME': 'FoodTracker',
         'USER': 'SeniorDeveloper',
         'PASSWORD': '134697825/*-qweQWE',
-        'HOST': '87.246.193.76',
-        'PORT' : '3306'
+        'HOST': 'food-app-server.mysql.database.azure.com',
+        'PORT' : '3306',
+        'OPTIONS': {
+            'ssl': {'ca': './certs/DigiCertGlobalRootCA.crt.pem'}
+        },
  
     }
 }
 
-# django.db.backends.mysql = mysql.connector.django
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators

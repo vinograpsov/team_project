@@ -1,5 +1,5 @@
 """
-WSGI config for test_database_django project.
+WSGI config for FoodTracker project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'test_database_django.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'FoodTracker.settings')
 
 application = get_wsgi_application()

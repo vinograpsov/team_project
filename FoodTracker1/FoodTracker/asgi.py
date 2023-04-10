@@ -1,5 +1,5 @@
 """
-ASGI config for test_database_django project.
+ASGI config for FoodTracker project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'test_database_django.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'FoodTracker.settings')
 
 application = get_asgi_application()
