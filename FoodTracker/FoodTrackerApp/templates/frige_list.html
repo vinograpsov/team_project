@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Список шняг из холодильника/title>
+</head>
+<body>
+    <h1>Список шняг из холодильника</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Имя пользователя</th>
+                <th>Электронная почта</th>
+                <th>Возраст</th>
+                <th>Вес</th>
+                <th>Рост</th>
+                <th>Пол</th>
+                <th>Уровень активности</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+                <tr>
+                    <td>{{ user.username }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.age }}</td>
+                    <td>{{ user.weight }}</td>
+                    <td>{{ user.height }}</td>
+                    <td>{{ user.get_sex_display }}</td>
+                    <td>{{ user.activity_level }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

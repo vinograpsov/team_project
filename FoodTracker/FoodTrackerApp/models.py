@@ -16,7 +16,7 @@ class User(models.Model):
         db_table = 'users'
 
 
-class Fridge(models.Model):
+class Frige(models.Model):
     product_id = models.IntegerField()
     user_id = models.IntegerField()
     location = models.CharField(max_length = 100)
@@ -38,7 +38,7 @@ class Product(models.Model):
 
 
 
-class recipe(models.Model):
+class Recipe(models.Model):
     user_id = models.IntegerField()
     name = models.CharField(max_length = 100)
     annotation = models.CharField(max_length = 100)

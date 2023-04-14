@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 from django.http import HttpResponse
-from .models import User
+from .models import User, Product
 
 
 def index(request):
@@ -12,3 +12,8 @@ def index(request):
 def user_list(request):
     users = User.objects.all()
     return render(request, 'user_list.html', {'users': users})
+
+
+def product_list(request):
+    products = Product.objects.all()
+    return render(request, 'products_list.html',{'products' : products})
